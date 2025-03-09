@@ -36,8 +36,8 @@ class Translator {
 
       // Translate titles
       for (const [key, value] of Object.entries(this.americanToBritishTitles)) {
-        const regex = new RegExp(`\\b${key}\\b`, 'gi');
-        translation = translation.replace(regex, this.highlightTranslation(value));
+        const regex = new RegExp(`${key}`,"gi");
+        translation = translation.replace(regex, this.highlightTranslation(value.replace(value.charAt(0), value.charAt(0).toLocaleUpperCase())));
       }
 
       // Translate time format (e.g., 10:30 -> 10.30)

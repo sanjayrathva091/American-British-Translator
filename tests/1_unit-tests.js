@@ -68,4 +68,13 @@ suite('Unit Tests', () => {
     assert.include(result, 'bunk off');
     assert.include(result, '<span class="highlight">bunk off</span>');
   });
+
+  // Test 8: Translate "No Mr. Bond, I expect you to die." to British English
+  test('Translate "No Mr. Bond, I expect you to die." to British English', () => {
+    const text = 'No Mr. Bond, I expect you to die.';
+    const locale = 'american-to-british';
+    const result = translator.translate(text, locale);
+    assert.include(result, 'Mr');
+    assert.include(result, '<span class="highlight">Mr</span>');
+  });
 });

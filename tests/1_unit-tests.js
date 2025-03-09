@@ -133,4 +133,15 @@ suite('Unit Tests', () => {
     assert.include(result, 'carnival');
     assert.include(result, '<span class="highlight">carnival</span>');
   });
+
+  // Test 15: Translate "I had a bicky then went to the chippy." to American English
+  test('Translate "I had a bicky then went to the chippy." to American English', () => {
+    const text = 'I had a bicky then went to the chippy.';
+    const locale = 'british-to-american';
+    const result = translator.translate(text, locale);
+    assert.include(result, 'cookie');
+    assert.include(result, '<span class="highlight">cookie</span>');
+    assert.include(result, 'fish-and-chip shop');
+    assert.include(result, '<span class="highlight">fish-and-chip shop</span>');
+  });
 });

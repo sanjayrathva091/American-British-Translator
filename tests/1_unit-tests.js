@@ -104,4 +104,13 @@ suite('Unit Tests', () => {
     assert.include(result, 'soccer');
     assert.include(result, '<span class="highlight">soccer</span>');
   });
+
+  // Test 12: Translate "Paracetamol takes up to an hour to work." to American English
+  test('Translate "Paracetamol takes up to an hour to work." to American English', () => {
+    const text = 'Paracetamol takes up to an hour to work.';
+    const locale = 'british-to-american';
+    const result = translator.translate(text, locale);
+    assert.include(result, 'Tylenol');
+    assert.include(result, '<span class="highlight">Tylenol</span>');
+  });
 });

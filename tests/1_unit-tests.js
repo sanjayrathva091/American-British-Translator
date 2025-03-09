@@ -86,4 +86,13 @@ suite('Unit Tests', () => {
     assert.include(result, 'Dr');
     assert.include(result, '<span class="highlight">Dr</span>');
   });
+
+  // Test 10: Translate "Lunch is at 12:15 today." to British English
+  test('Translate "Lunch is at 12:15 today." to British English', () => {
+    const text = 'Lunch is at 12:15 today.';
+    const locale = 'american-to-british';
+    const result = translator.translate(text, locale);
+    assert.include(result, '12.15');
+    assert.include(result, '<span class="highlight">12.15</span>');
+  });
 });

@@ -23,4 +23,13 @@ suite('Unit Tests', () => {
     assert.include(result, 'yoghurt');
     assert.include(result, '<span class="highlight">yoghurt</span>');
   });
+
+  // Test 3: Translate "We had a party at my friend\'s condo." to British English
+  test('Translate "We had a party at my friend\'s condo." to British English', () => {
+    const text = 'We had a party at my friend\'s condo.';
+    const locale = 'american-to-british';
+    const result = translator.translate(text, locale);
+    assert.include(result, 'flat');
+    assert.include(result, '<span class="highlight">flat</span>');
+  });
 });

@@ -41,4 +41,13 @@ suite('Unit Tests', () => {
     assert.include(result, 'bin');
     assert.include(result, '<span class="highlight">bin</span>');
   });
+
+  // Test 5: Translate "The parking lot was full." to British English
+  test('Translate "The parking lot was full." to British English', () => {
+    const text = 'The parking lot was full.';
+    const locale = 'american-to-british';
+    const result = translator.translate(text, locale);
+    assert.include(result, 'car park');
+    assert.include(result, '<span class="highlight">car park</span>');
+  });
 });

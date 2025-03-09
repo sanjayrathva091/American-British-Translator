@@ -59,4 +59,13 @@ suite('Unit Tests', () => {
     assert.include(result, 'Heath Robinson device');
     assert.include(result, '<span class="highlight">Heath Robinson device</span>');
   });
+
+  // Test 7: Translate "To play hooky means to skip class or work." to British English
+  test('Translate "To play hooky means to skip class or work." to British English', () => {
+    const text = 'To play hooky means to skip class or work.';
+    const locale = 'american-to-british';
+    const result = translator.translate(text, locale);
+    assert.include(result, 'bunk off');
+    assert.include(result, '<span class="highlight">bunk off</span>');
+  });
 });

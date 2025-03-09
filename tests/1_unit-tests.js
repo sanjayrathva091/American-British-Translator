@@ -95,4 +95,13 @@ suite('Unit Tests', () => {
     assert.include(result, '12.15');
     assert.include(result, '<span class="highlight">12.15</span>');
   });
+
+  // Test 11: Translate "We watched the footie match for a while." to American English
+  test('Translate "We watched the footie match for a while." to American English', () => {
+    const text = 'We watched the footie match for a while.';
+    const locale = 'british-to-american';
+    const result = translator.translate(text, locale);
+    assert.include(result, 'soccer');
+    assert.include(result, '<span class="highlight">soccer</span>');
+  });
 });

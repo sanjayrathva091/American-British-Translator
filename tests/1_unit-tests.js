@@ -144,4 +144,83 @@ suite('Unit Tests', () => {
     assert.include(result, 'fish-and-chip shop');
     assert.include(result, '<span class="highlight">fish-and-chip shop</span>');
   });
+
+  // Test 16: Translate "I\'ve just got bits and bobs in my bum bag." to American English
+  test('Translate "I\'ve just got bits and bobs in my bum bag." to American English', () => {
+    const text = 'I\'ve just got bits and bobs in my bum bag.';
+    const locale = 'british-to-american';
+    const result = translator.translate(text, locale);
+    assert.include(result, 'odds and ends');
+    assert.include(result, '<span class="highlight">odds and ends</span>');
+    assert.include(result, 'fanny pack');
+    assert.include(result, '<span class="highlight">fanny pack</span>');
+  });
+
+  // Test 17: Translate "The car boot sale at Boxted Airfield was called off." to American English
+  test('Translate "The car boot sale at Boxted Airfield was called off." to American English', () => {
+    const text = 'The car boot sale at Boxted Airfield was called off.';
+    const locale = 'british-to-american';
+    const result = translator.translate(text, locale);
+    assert.include(result, 'swap meet');
+    assert.include(result, '<span class="highlight">swap meet</span>');
+  });
+
+  // Test 18: Translate "Have you met Mrs Kalyani?" to American English
+  test('Translate "Have you met Mrs Kalyani?" to American English', () => {
+    const text = 'Have you met Mrs Kalyani?';
+    const locale = 'british-to-american';
+    const result = translator.translate(text, locale);
+    assert.include(result, 'Mrs.');
+    assert.include(result, '<span class="highlight">Mrs.</span>');
+  });
+
+  // Test 19: Translate "Prof Joyner of King\'s College, London." to American English
+  test('Translate "Prof Joyner of King\'s College, London." to American English', () => {
+    const text = 'Prof Joyner of King\'s College, London.';
+    const locale = 'british-to-american';
+    const result = translator.translate(text, locale);
+    assert.include(result, 'Prof.');
+    assert.include(result, '<span class="highlight">Prof.</span>');
+  });
+
+  // Test 20: Translate "Tea time is usually around 4 or 4.30." to American English
+  test('Translate "Tea time is usually around 4 or 4.30." to American English', () => {
+    const text = 'Tea time is usually around 4 or 4.30.';
+    const locale = 'british-to-american';
+    const result = translator.translate(text, locale);
+    assert.include(result, '4:30');
+    assert.include(result, '<span class="highlight">4:30</span>');
+  });
+
+  // Test 21: Highlight translation in "Mangoes are my favorite fruit."
+  test('Highlight translation in "Mangoes are my favorite fruit."', () => {
+    const text = 'Mangoes are my favorite fruit.';
+    const locale = 'american-to-british';
+    const result = translator.translate(text, locale);
+    assert.include(result, '<span class="highlight">favourite</span>');
+  });
+
+  // Test 22: Highlight translation in "I ate yogurt for breakfast."
+  test('Highlight translation in "I ate yogurt for breakfast."', () => {
+    const text = 'I ate yogurt for breakfast.';
+    const locale = 'american-to-british';
+    const result = translator.translate(text, locale);
+    assert.include(result, '<span class="highlight">yoghurt</span>');
+  });
+
+  // Test 23: Highlight translation in "We watched the footie match for a while."
+  test('Highlight translation in "We watched the footie match for a while."', () => {
+    const text = 'We watched the footie match for a while.';
+    const locale = 'british-to-american';
+    const result = translator.translate(text, locale);
+    assert.include(result, '<span class="highlight">soccer</span>');
+  });
+
+  // Test 24: Highlight translation in "Paracetamol takes up to an hour to work."
+  test('Highlight translation in "Paracetamol takes up to an hour to work."', () => {
+    const text = 'Paracetamol takes up to an hour to work.';
+    const locale = 'british-to-american';
+    const result = translator.translate(text, locale);
+    assert.include(result, '<span class="highlight">Tylenol</span>');
+  });
 });

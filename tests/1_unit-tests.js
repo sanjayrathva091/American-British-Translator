@@ -32,4 +32,13 @@ suite('Unit Tests', () => {
     assert.include(result, 'flat');
     assert.include(result, '<span class="highlight">flat</span>');
   });
+
+  // Test 4: Translate "Can you toss this in the trashcan for me?" to British English
+  test('Translate "Can you toss this in the trashcan for me?" to British English', () => {
+    const text = 'Can you toss this in the trashcan for me?';
+    const locale = 'american-to-british';
+    const result = translator.translate(text, locale);
+    assert.include(result, 'bin');
+    assert.include(result, '<span class="highlight">bin</span>');
+  });
 });

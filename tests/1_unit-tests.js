@@ -77,4 +77,13 @@ suite('Unit Tests', () => {
     assert.include(result, 'Mr');
     assert.include(result, '<span class="highlight">Mr</span>');
   });
+
+  // Test 9: Translate "Dr. Grosh will see you now." to British English
+  test('Translate "Dr. Grosh will see you now." to British English', () => {
+    const text = 'Dr. Grosh will see you now.';
+    const locale = 'american-to-british';
+    const result = translator.translate(text, locale);
+    assert.include(result, 'Dr');
+    assert.include(result, '<span class="highlight">Dr</span>');
+  });
 });

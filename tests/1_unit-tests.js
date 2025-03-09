@@ -113,4 +113,13 @@ suite('Unit Tests', () => {
     assert.include(result, 'Tylenol');
     assert.include(result, '<span class="highlight">Tylenol</span>');
   });
+
+  // Test 13: Translate "First, caramelise the onions." to American English
+  test('Translate "First, caramelise the onions." to American English', () => {
+    const text = 'First, caramelise the onions.';
+    const locale = 'british-to-american';
+    const result = translator.translate(text, locale);
+    assert.include(result, 'caramelize');
+    assert.include(result, '<span class="highlight">caramelize</span>');
+  })
 });

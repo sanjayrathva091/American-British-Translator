@@ -122,4 +122,15 @@ suite('Unit Tests', () => {
     assert.include(result, 'caramelize');
     assert.include(result, '<span class="highlight">caramelize</span>');
   })
+
+  // Test 14: Translate "I spent the bank holiday at the funfair." to American English
+  test('Translate "I spent the bank holiday at the funfair." to American English', () => {
+    const text = 'I spent the bank holiday at the funfair.';
+    const locale = 'british-to-american';
+    const result = translator.translate(text, locale);
+    assert.include(result, 'public holiday');
+    assert.include(result, '<span class="highlight">public holiday</span>');
+    assert.include(result, 'carnival');
+    assert.include(result, '<span class="highlight">carnival</span>');
+  });
 });

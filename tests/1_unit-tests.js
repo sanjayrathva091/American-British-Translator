@@ -50,4 +50,13 @@ suite('Unit Tests', () => {
     assert.include(result, 'car park');
     assert.include(result, '<span class="highlight">car park</span>');
   });
+
+  // Test 6: Translate "Like a high tech Rube Goldberg machine." to British English
+  test('Translate "Like a high tech Rube Goldberg machine." to British English', () => {
+    const text = 'Like a high tech Rube Goldberg machine.';
+    const locale = 'american-to-british';
+    const result = translator.translate(text, locale);
+    assert.include(result, 'Heath Robinson device');
+    assert.include(result, '<span class="highlight">Heath Robinson device</span>');
+  });
 });
